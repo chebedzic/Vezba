@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
     this.registerMode = true;
   }
   cancelRegisterMode(reggisterMode: boolean) {
-    console.log('cancel part 2');
     this.registerMode = false;
   }
 }
