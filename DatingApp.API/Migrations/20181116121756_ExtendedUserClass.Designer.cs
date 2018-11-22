@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatingApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20181109224606_ExtendedUserClass")]
+    [Migration("20181116121756_ExtendedUserClass")]
     partial class ExtendedUserClass
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,7 +18,7 @@ namespace DatingApp.API.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.4-rtm-31024");
 
-            modelBuilder.Entity("DatingApp.API.Models.Photos", b =>
+            modelBuilder.Entity("DatingApp.API.Models.Photo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -55,6 +55,8 @@ namespace DatingApp.API.Migrations
 
                     b.Property<string>("Gender");
 
+                    b.Property<string>("Interests");
+
                     b.Property<string>("Introduction");
 
                     b.Property<string>("KnownAs");
@@ -86,7 +88,7 @@ namespace DatingApp.API.Migrations
                     b.ToTable("Values");
                 });
 
-            modelBuilder.Entity("DatingApp.API.Models.Photos", b =>
+            modelBuilder.Entity("DatingApp.API.Models.Photo", b =>
                 {
                     b.HasOne("DatingApp.API.Models.User", "User")
                         .WithMany("Photos")
